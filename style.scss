@@ -88,62 +88,89 @@ legend {
 	display: block;
 }
 
+$accent:#00AAE3;
+$accentdark:#2E6374;
+$gray:#FAFAFA;
+
+@mixin title72 {
+    font-size: 72px;
+    line-height: 87.14px;
+    font-weight: 700;
+    color: $accentdark;
+}
+@mixin font18 {
+    font-size: 18px;
+    line-height: 21.94px;
+    font-family: "Montserrat";
+}
+@mixin button18 {
+    font-size: 18px;
+    line-height: 21.78px;
+    font-weight: 600;
+}
+@mixin font32 {
+    font-size: 32px;
+    line-height: 38.73px;
+    font-weight: 600;
+}
+@mixin font48 {
+    font-size: 48px;
+    line-height: 58.09px;
+    color: $accentdark;
+}
 
 body{
     font-family: 'Inter';
-    color: white;
 }
 .container{
     max-width: 1680px;
     margin: 0 auto;
 }
+
+.main-btn {
+    @include button18;
+    display: inline-block;
+    padding: 25px 32px;
+    border-radius: 10px;
+    background-color: $accent;
+    color: white;
+}
+.main-title {
+    @include title72;
+    padding-bottom: 72px;
+}
+
+
+/* SALE */
+
 .sale{
-    
-    color: #2E6374;
+    .main-btn {
+        font-weight: 500;
+    }
     &__inner{
-        
         background: url(img/sale-img.png) no-repeat right;
-        background-color: #FAFAFA;
+        background-color: $gray;
         padding: 56px 0px 87px 56px;
         border-radius: 20px;
-        
-    }
-    &__content{
-    
     }
     &__title{
-        font-size: 72px;
-        font-weight: 700;
-        line-height: 87.14px;
+        @include title72;
         padding-bottom: 32px;
     }
     &__description{
-        font-size: 48px;
-        line-height: 58.09px;
+        @include font48;
         margin-bottom: 48px;
         span{
             display: block;
-            font-size: 48px;
             font-weight: 700;
-            line-height: 58.09px;
             padding-top: 8px;
         }
-    }
-    &__button{
-        display: inline-block;
-        padding: 25px 32px;
-        border-radius: 10px;
-        background-color: #00AAE3;
-        color: white;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 21.78px;
     }
     &__nav{
         margin-top: 48px;
         &-link{
             display: inline-block;
-            border: solid 1px #2E6374;
+            border: solid 1px $accentdark;
             border-radius: 20px;
             padding: 17px 24px;
             font-size: 18px;
@@ -155,17 +182,13 @@ body{
 
 }
 
+/* ADVANTAGES */
+
 .advantages{
     padding-top: 96px;
     &__title{
-        color: #2E6374;
-        font-size: 72px;
-        font-weight: 700;
-        line-height: 87.14px;
+        @include title72;
         margin-bottom: 72px;
-    }
-    &__inner{
-
     }
     &__markers{
         display: flex;
@@ -173,7 +196,7 @@ body{
     }
     &__marker{
         border-radius: 20px;
-        background-color: #FAFAFA;
+        background-color: $gray;
         box-shadow: 0px 2px 4px 0px #ADADAD3D;
         padding: 40px 93px ;
         text-align: center;
@@ -184,8 +207,369 @@ body{
             font-size: 18px;
             line-height: 21.78px;
             text-align: center;
-            color: black;
         }
     }
 
+}
+
+/* CONTENT */
+
+.content{
+    color: black;
+    &__inner{
+        padding-top: 15px;
+
+    }
+    &__title{
+        font-size: 32px;
+        line-height: 39.01px;
+        font-weight: 700;
+        font-family: "Montserrat";
+        padding-bottom: 20px;
+    }
+    &__text{
+        padding-top: 10px;
+        @include font18;
+    }
+}
+
+/* AUTOR */
+
+.autor {
+    margin: 96px 0 160px 0;
+    &__inner {
+        display: flex;
+        align-items: center;
+        column-gap: 83px;
+        background-color: $gray;
+        border-radius: 30px;
+        padding: 32px 621px 32px 184px;
+    }
+}
+.person {
+    &__autor {
+        font-size: 40px;
+        line-height: 48.41px;
+        font-weight: 700;
+        padding-bottom: 24px;
+    }
+    &__name {
+        @include font32;
+        padding-bottom: 16px;
+    }
+    &__position {
+        font-size: 24px;
+        line-height: 29.05px;
+        padding-bottom: 16px;
+    }
+    &__experience {
+        font-size: 24px;
+        line-height: 29.05px;
+        padding-bottom: 32px;
+    }
+    &__experience span {
+        font-weight: 600;
+    }
+    &__img {
+        border-radius: 50%;
+        width: 326px;
+        height: 326px;
+        background: url(img/person.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+/* INDICATION */
+
+.indication {
+    &__inner {
+        display: flex;
+        column-gap: 24px;
+    }
+    &__block {
+        padding: 40px 271px 78px 56px;
+        border-radius: 30px;
+        background-color: $gray;
+        box-shadow: 8px 8px 10px 0px #8A8A8A29;
+    }
+    &__title {
+        font-family: "Montserrat";
+        font-size: 32px;
+        line-height: 39.01px;
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    &__point {
+        display: flex;
+        column-gap: 16px;
+        max-width: 501px;
+        padding-bottom: 32px;
+        @include font18;
+    }
+    &__point:last-child {
+        padding-bottom: 0;
+    }
+}
+
+/* DOCTORS */
+
+.doctors {
+    margin: 160px 0;
+    .person__position {
+        padding-bottom: 24px;
+        white-space: nowrap;
+    }
+    .person__img {
+        width: 286px;
+        height: 286px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+    }
+    &__blocks {
+        display: flex;
+        column-gap: 24px;
+        position: relative;
+    }
+    &__block {
+        padding: 32px 39px 56px 39px;
+        border-radius: 20px;
+        background-color: $gray;
+        width: 544px;
+    }
+}
+.arrow {
+    padding: 26px 18px;
+    border-radius: 50%;
+    background-color: $accent;
+    max-height: 80px;
+    position: absolute;
+    top: 284px;
+    right: -41px;
+    box-shadow: 0px 3px 4px 0px #2A2A2A29;
+}
+
+/* CASES */
+
+.cases {
+    .arrow {
+        top: 219px;
+        right: -40px;
+        z-index: 1;
+    }
+    margin: 160px 0;
+    &__blocks {
+        display: flex;
+        column-gap: 24px;
+        position: relative;
+    }
+    &__block {
+        width: 544px;
+        box-shadow: 0px 4px 21px 0px #535D6329;
+        position: relative;
+        border-radius: 20px;
+    }
+    &__text {
+        font-size: 24px;
+        line-height: 29.05px;
+        padding: 24px 0 32px 0;
+        max-width: 408px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    &__before {
+        font-size: 18px;
+        line-height: 22.63px;
+        font-family: "Cera Pro";
+        padding: 8.5px 24px;
+        background-color: #fff;
+        border-radius: 10px;
+        position: absolute;
+        top: 24px;
+        left: 16px;
+    }
+    &__after {
+        font-size: 18px;
+        line-height: 22.63px;
+        font-family: "Cera Pro";
+        padding: 8.5px 24px;
+        background-color: #fff;
+        border-radius: 10px;
+        position: absolute;
+        top: 24px;
+        right: 16px;
+    }
+    &__line {
+        width: 8px;
+        height: 403px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        background-color: #fff;
+    }
+    &__photo {
+        width: 544px;
+        height: 403px;
+        background: url(img/cases.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+    }
+}
+
+/* REVIEWS */
+
+.reviews {
+    .arrow {
+        background-color: #A7A7A7;
+        top: 150px;
+        right: 432px;
+    }
+    .arrow:first-child {
+        left: 392px;
+    }
+    &__main {
+        text-align: center;
+        position: relative;
+    }
+    &__photo {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        background: url(img/reviews.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+    &__text {
+        padding-bottom: 32px;
+        font-size: 18px;
+        line-height: 27px;
+        max-width: 608px;
+        margin: 0 auto;
+    }
+    &__autor {
+        padding-bottom: 40px;
+        @include font32;
+    }
+}
+
+/* OTHERS */
+
+.others {
+    .arrow {
+        top: 235px;
+    }
+    margin: 160px 0;
+    &__blocks {
+        display: flex;
+        column-gap: 24px;
+        position: relative;
+    }
+    &__block {
+        width: 544px;
+    }
+    &__img {
+        width: 544px;
+        height: 318px;
+        overflow: hidden;
+        background: url(img/others.jpg);
+        background-position: 100% 35%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    &__info {
+        background-color: $gray;
+        padding: 40px 144px 40px 32px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        &-title {
+            @include font32;
+            padding-bottom: 40px;
+        }
+    }
+}
+
+/* APPOINT */
+
+.appoint {
+    .main-btn {
+        padding: 25px 203.5px;
+    }
+    margin-bottom: 160px;
+    &__inner {
+        background-color: $gray;
+        border-radius: 20px;
+        padding: 40px 0;
+        text-align: center;
+    }
+    &__title {
+        @include font48;
+        font-weight: 600;
+        padding-bottom: 16px;
+    }
+    &__descrip {
+        font-size: 18px;
+        line-height: 21.78px;
+        padding-bottom: 32px;
+    }
+    &__field {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 16px;
+        width: 512px;
+        height: 64px;
+        border-radius: 10px;
+        border: 2px solid $accent;
+        padding-left: 16px;
+        font-size: 18px;
+        line-height: 21.09px;
+        letter-spacing: 0.05em;
+        font-family: "Roboto";
+    }
+    &__field:last-child {
+        margin-bottom: 32px;
+    }
+    &__field::placeholder {
+        color: #999999;
+    }
+}
+
+/* PRICE */
+
+.price {
+    margin-top: 160px;
+    &__table {
+        @include font18;
+        background-color: #D9D9D9;
+    }
+    &__line {
+        background-color: #F7F7F7;
+    }
+    &__line:nth-child(even) {
+        background-color: #fff;
+    }
+    &__line:first-child {
+        font-weight: 700;
+    }
+    &__column {
+        padding-left: 20px;
+        height: 55px;
+        width: 1432px;
+    }
+    &__column:nth-child(2) {
+        width: 132px;
+        font-size: 21px;
+    }
+    &__column:nth-child(3) {
+        width: 107px;
+        font-size: 21px;
+    }
 }
