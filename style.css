@@ -410,6 +410,7 @@ body {
 .reviews__main {
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 .reviews__photo {
   border-radius: 50%;
@@ -556,4 +557,43 @@ body {
 .price__column:nth-child(3) {
   width: 107px;
   font-size: 21px;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.sliders__inner {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.carousel, .carousel1, .carousel2 {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel__content, .carousel__content1, .carousel__content2 {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.prev,
+.next, .prev1, .next1, .prev2, .next2 {
+  justify-content: center;
+  align-content: center;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.prev, .prev1, .prev2 {
+  left: -41px;
+  display: none;
 }/*# sourceMappingURL=style.css.map */
