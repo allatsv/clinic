@@ -88,6 +88,11 @@ legend {
 	display: block;
 }
 
+@font-face {
+    font-family: "Cera Pro";
+    src: url(fonts/CeraPro-Regular.woff) format("woff");
+}
+
 $accent:#00AAE3;
 $accentdark:#2E6374;
 $gray:#FAFAFA;
@@ -95,6 +100,18 @@ $gray:#FAFAFA;
 @mixin title72 {
     font-size: 72px;
     line-height: 87.14px;
+    font-weight: 700;
+    color: $accentdark;
+}
+@mixin title40 {
+    font-size: 40px;
+    line-height: 48.41px;
+    font-weight: 700;
+    color: $accentdark;
+}
+@mixin title32 {
+    font-size: 32px;
+    line-height: 38.73px;
     font-weight: 700;
     color: $accentdark;
 }
@@ -185,10 +202,9 @@ body{
 /* ADVANTAGES */
 
 .advantages{
-    padding-top: 96px;
-    &__title{
+    .main-title {
         @include title72;
-        margin-bottom: 72px;
+        padding-bottom: 72px;
     }
     &__markers{
         display: flex;
@@ -215,20 +231,16 @@ body{
 /* CONTENT */
 
 .content{
-    color: black;
-    &__inner{
-        padding-top: 15px;
-
-    }
     &__title{
         font-size: 32px;
         line-height: 39.01px;
         font-weight: 700;
         font-family: "Montserrat";
         padding-bottom: 20px;
+        padding-top: 10px;
     }
     &__text{
-        padding-top: 10px;
+        padding-top: 20px;
         @include font18;
     }
 }
@@ -457,6 +469,7 @@ body{
     &__autor {
         padding-bottom: 40px;
         @include font32;
+        font-weight: 600;
     }
 }
 
@@ -616,4 +629,308 @@ body{
   
     left: -41px;
     display: none;
+  }
+
+
+
+  @media (min-width: 360px) and (max-width: 768px) {
+    .container {
+        width: 356px;
+        margin: 0 auto;
+    }
+
+    .main-title {
+        @include title32;
+        padding-bottom: 40px;
+    }
+    .sale{
+        &__inner{
+            background: url(img/sale-mob.png) no-repeat bottom;
+            padding: 40px 24px 558px 24px;
+        }
+        &__title{
+            @include title40;
+            text-align: center;
+            padding-bottom: 24px;
+        }
+        &__description{
+            font-size: 24px;
+            line-height: 29.05px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        &__nav{
+            margin-top: 40px;
+            display: flex;
+            flex-flow: wrap;
+            &-link{
+                padding: 13px 16px;
+                margin-bottom: 16px;
+            }
+            &-link:first-child {
+                order: 1;
+            }
+            &-link:last-child {
+                order: 2;
+            }
+            &-link:nth-child(3) {
+                order: 4;
+            }
+            &-link:nth-child(2) {
+                order: 3;
+            }
+        }
+    
+    }
+
+    .advantages{
+        padding-top: 64px;
+        &__markers {
+            flex-flow: wrap;
+            column-gap: 0;
+        }
+        &__marker{
+            padding: 40px 71px;
+            margin-bottom: 24px;
+        }
+        &__marker:last-child {
+            margin-bottom: 104px;
+        }
+    
+    }
+
+    .content{
+        &__title{
+            font-size: 24px;
+            line-height: 29.05px;
+            font-weight: 700;
+            padding-bottom: 20px;
+        }
+        &__text{
+            padding-top: 10px;
+            @include font18;
+        }
+    }
+
+    .autor {
+        margin: 80px 0 104px 0;
+        &__inner {
+            display: block;
+            align-items: center;
+            column-gap: 0px;
+            padding: 32px 22px 32px 25px;
+        }
+    }
+    .person {
+        &__info {
+            text-align: center;
+        }
+        &__autor {
+            font-size: 24px;
+            line-height: 29.05px;
+            padding-bottom: 16px;
+        }
+        &__name {
+            font-size: 16px;
+            line-height: 19.36px;
+            padding-bottom: 8px;
+        }
+        &__position {
+            font-size: 16px;
+            line-height: 19.36px;
+        }
+        &__experience {
+            font-size: 16px;
+            line-height: 19.36px;
+        }
+        &__img {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            margin-bottom: 24px;
+        }
+    }
+
+    .indication {
+        &__inner {
+            display: block;
+            column-gap: 0px;
+        }
+        &__block {
+            padding: 32px 81px 135px 24px;
+        }
+        &__title {
+            @include font18;
+            padding-bottom: 32px;
+        }
+        &__point {
+            max-width: 318px;
+            padding-bottom: 24px;
+            font-size: 16px;
+            line-height: 19.5px;
+        }
+        &__point:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    .price {
+        margin-top: 104px;
+        &__table {
+            font-size: 16px;
+            line-height: 19.5px;
+            font-family: "Montserrat";
+        }
+        &__column {
+            padding-left: 11px;
+            height: 65px;
+            width: 233px;
+        }
+        &__column:nth-child(2) {
+            width: 55px;
+            @include font18;
+        }
+        &__column:nth-child(3) {
+            width: 40px;
+            @include font18;
+        }
+    }
+
+    .doctors {
+        margin: 62px 0 104px 0;
+        padding-top: 104px;
+        border-top: 3px dotted $gray;
+        .person__position {
+            padding-bottom: 16px;
+        }
+        .person__img {
+            width: 140px;
+            height: 140px;
+        }
+        &__blocks {
+            column-gap: 0px;
+        }
+        &__block {
+            padding: 32px 23px 32px 24px;
+            width: 358px;
+        }
+    }
+    .arrow {
+        padding: 18.2px 12.6px;
+        max-height: 56px;
+        top: 205px;
+        right: -16px;
+    }
+
+    .cases {
+        .arrow {
+            top: 141px;
+            right: -16px;
+        }
+        margin: 104px 0;
+        &__blocks {
+            column-gap: 0px;
+        }
+        &__block {
+            width: 358px;
+        }
+        &__text {
+            font-size: 18px;
+            line-height: 21.78px;
+            max-width: 306px;
+        }
+        &__before {
+            top: 16px;
+            left: 8px;
+        }
+        &__after {
+            top: 16px;
+            right: 8px;
+        }
+        &__line {
+            width: 3px;
+            height: 238px;
+        }
+        &__photo {
+            width: 358px;
+            height: 238px;
+        }
+    }
+
+    .reviews {
+        .arrow {
+            background-color: #A7A7A7;
+            top: 1355px;
+            right: 432px;
+        }
+        .arrow:first-child {
+            left: 392px;
+        }
+        &__photo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 24px;
+        }
+        &__text {
+            padding-bottom: 16px;
+            font-size: 14px;
+            line-height: 21px;
+            max-width: 282px;
+        }
+        &__autor {
+            padding-bottom: 32px;
+            font-size: 18px;
+            line-height: 21.78px;
+        }
+    }
+
+    .others {
+        .arrow {
+            top: 191px;
+        }
+        margin: 104px 0;
+        &__blocks {
+            column-gap: 0px;
+        }
+        &__block {
+            width: 358px;
+        }
+        &__img {
+            width: 358px;
+            height: 224px;
+        }
+        &__info {
+            padding: 32px 66px 32px 16px;
+            &-title {
+                font-size: 24px;
+                line-height: 29.05px;
+                font-weight: 600;
+                padding-bottom: 32px;
+            }
+        }
+    }
+
+    .appoint {
+        .main-btn {
+            padding: 22.5px 102px;
+        }
+        margin-bottom: 104px;
+        &__inner {
+            padding: 32px 30px 52px 30px;
+        }
+        &__title {
+            font-size: 24px;
+            line-height: 29.05px;
+        }
+        &__descrip {
+            font-size: 16px;
+            line-height: 19.36px;
+        }
+        &__field {
+            width: 298px;
+            height: 56px;
+            font-size: 16px;
+            line-height: 18.75px;
+        }
+    }
   }

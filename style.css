@@ -85,6 +85,10 @@ legend {
   display: block;
 }
 
+@font-face {
+  font-family: "Cera Pro";
+  src: url(fonts/CeraPro-Regular.woff) format("woff");
+}
 body {
   font-family: "Inter";
 }
@@ -156,15 +160,12 @@ body {
 }
 
 /* ADVANTAGES */
-.advantages {
-  padding-top: 96px;
-}
-.advantages__title {
+.advantages .main-title {
   font-size: 72px;
   line-height: 87.14px;
   font-weight: 700;
   color: #2E6374;
-  margin-bottom: 72px;
+  padding-bottom: 72px;
 }
 .advantages__markers {
   display: flex;
@@ -188,21 +189,16 @@ body {
 }
 
 /* CONTENT */
-.content {
-  color: black;
-}
-.content__inner {
-  padding-top: 15px;
-}
 .content__title {
   font-size: 32px;
   line-height: 39.01px;
   font-weight: 700;
   font-family: "Montserrat";
   padding-bottom: 20px;
+  padding-top: 10px;
 }
 .content__text {
-  padding-top: 10px;
+  padding-top: 20px;
   font-size: 18px;
   line-height: 21.94px;
   font-family: "Montserrat";
@@ -435,6 +431,7 @@ body {
   font-size: 32px;
   line-height: 38.73px;
   font-weight: 600;
+  font-weight: 600;
 }
 
 /* OTHERS */
@@ -596,4 +593,303 @@ body {
 .prev, .prev1, .prev2 {
   left: -41px;
   display: none;
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+  .container {
+    width: 356px;
+    margin: 0 auto;
+  }
+  .main-title {
+    font-size: 32px;
+    line-height: 38.73px;
+    font-weight: 700;
+    color: #2E6374;
+    padding-bottom: 40px;
+  }
+  .sale__inner {
+    background: url(img/sale-mob.png) no-repeat bottom;
+    padding: 40px 24px 558px 24px;
+  }
+  .sale__title {
+    font-size: 40px;
+    line-height: 48.41px;
+    font-weight: 700;
+    color: #2E6374;
+    text-align: center;
+    padding-bottom: 24px;
+  }
+  .sale__description {
+    font-size: 24px;
+    line-height: 29.05px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .sale__nav {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: wrap;
+  }
+  .sale__nav-link {
+    padding: 13px 16px;
+    margin-bottom: 16px;
+  }
+  .sale__nav-link:first-child {
+    order: 1;
+  }
+  .sale__nav-link:last-child {
+    order: 2;
+  }
+  .sale__nav-link:nth-child(3) {
+    order: 4;
+  }
+  .sale__nav-link:nth-child(2) {
+    order: 3;
+  }
+  .advantages {
+    padding-top: 64px;
+  }
+  .advantages__markers {
+    flex-flow: wrap;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+  .advantages__marker {
+    padding: 40px 71px;
+    margin-bottom: 24px;
+  }
+  .advantages__marker:last-child {
+    margin-bottom: 104px;
+  }
+  .content__title {
+    font-size: 24px;
+    line-height: 29.05px;
+    font-weight: 700;
+    padding-bottom: 20px;
+  }
+  .content__text {
+    padding-top: 10px;
+    font-size: 18px;
+    line-height: 21.94px;
+    font-family: "Montserrat";
+  }
+  .autor {
+    margin: 80px 0 104px 0;
+  }
+  .autor__inner {
+    display: block;
+    align-items: center;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+    padding: 32px 22px 32px 25px;
+  }
+  .person__info {
+    text-align: center;
+  }
+  .person__autor {
+    font-size: 24px;
+    line-height: 29.05px;
+    padding-bottom: 16px;
+  }
+  .person__name {
+    font-size: 16px;
+    line-height: 19.36px;
+    padding-bottom: 8px;
+  }
+  .person__position {
+    font-size: 16px;
+    line-height: 19.36px;
+  }
+  .person__experience {
+    font-size: 16px;
+    line-height: 19.36px;
+  }
+  .person__img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+  .indication__inner {
+    display: block;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .indication__block {
+    padding: 32px 81px 135px 24px;
+  }
+  .indication__title {
+    font-size: 18px;
+    line-height: 21.94px;
+    font-family: "Montserrat";
+    padding-bottom: 32px;
+  }
+  .indication__point {
+    max-width: 318px;
+    padding-bottom: 24px;
+    font-size: 16px;
+    line-height: 19.5px;
+  }
+  .indication__point:last-child {
+    padding-bottom: 0;
+  }
+  .price {
+    margin-top: 104px;
+  }
+  .price__table {
+    font-size: 16px;
+    line-height: 19.5px;
+    font-family: "Montserrat";
+  }
+  .price__column {
+    padding-left: 11px;
+    height: 65px;
+    width: 233px;
+  }
+  .price__column:nth-child(2) {
+    width: 55px;
+    font-size: 18px;
+    line-height: 21.94px;
+    font-family: "Montserrat";
+  }
+  .price__column:nth-child(3) {
+    width: 40px;
+    font-size: 18px;
+    line-height: 21.94px;
+    font-family: "Montserrat";
+  }
+  .doctors {
+    margin: 62px 0 104px 0;
+    padding-top: 104px;
+    border-top: 3px dotted #FAFAFA;
+  }
+  .doctors .person__position {
+    padding-bottom: 16px;
+  }
+  .doctors .person__img {
+    width: 140px;
+    height: 140px;
+  }
+  .doctors__blocks {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .doctors__block {
+    padding: 32px 23px 32px 24px;
+    width: 358px;
+  }
+  .arrow {
+    padding: 18.2px 12.6px;
+    max-height: 56px;
+    top: 205px;
+    right: -16px;
+  }
+  .cases {
+    margin: 104px 0;
+  }
+  .cases .arrow {
+    top: 141px;
+    right: -16px;
+  }
+  .cases__blocks {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .cases__block {
+    width: 358px;
+  }
+  .cases__text {
+    font-size: 18px;
+    line-height: 21.78px;
+    max-width: 306px;
+  }
+  .cases__before {
+    top: 16px;
+    left: 8px;
+  }
+  .cases__after {
+    top: 16px;
+    right: 8px;
+  }
+  .cases__line {
+    width: 3px;
+    height: 238px;
+  }
+  .cases__photo {
+    width: 358px;
+    height: 238px;
+  }
+  .reviews .arrow {
+    background-color: #A7A7A7;
+    top: 1355px;
+    right: 432px;
+  }
+  .reviews .arrow:first-child {
+    left: 392px;
+  }
+  .reviews__photo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+  }
+  .reviews__text {
+    padding-bottom: 16px;
+    font-size: 14px;
+    line-height: 21px;
+    max-width: 282px;
+  }
+  .reviews__autor {
+    padding-bottom: 32px;
+    font-size: 18px;
+    line-height: 21.78px;
+  }
+  .others {
+    margin: 104px 0;
+  }
+  .others .arrow {
+    top: 191px;
+  }
+  .others__blocks {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .others__block {
+    width: 358px;
+  }
+  .others__img {
+    width: 358px;
+    height: 224px;
+  }
+  .others__info {
+    padding: 32px 66px 32px 16px;
+  }
+  .others__info-title {
+    font-size: 24px;
+    line-height: 29.05px;
+    font-weight: 600;
+    padding-bottom: 32px;
+  }
+  .appoint {
+    margin-bottom: 104px;
+  }
+  .appoint .main-btn {
+    padding: 22.5px 102px;
+  }
+  .appoint__inner {
+    padding: 32px 30px 52px 30px;
+  }
+  .appoint__title {
+    font-size: 24px;
+    line-height: 29.05px;
+  }
+  .appoint__descrip {
+    font-size: 16px;
+    line-height: 19.36px;
+  }
+  .appoint__field {
+    width: 298px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 18.75px;
+  }
 }/*# sourceMappingURL=style.css.map */
