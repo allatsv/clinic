@@ -319,6 +319,7 @@ body{
         column-gap: 16px;
         max-width: 501px;
         padding-bottom: 32px;
+        align-items: center;
         @include font18;
     }
     &__point:last-child {
@@ -682,7 +683,7 @@ body{
 
 
 
-  @media (min-width: 360px) and (max-width: 768px) {
+  @media (min-width: 350px) and (max-width: 768px) {
     .container {
         width: 356px;
         margin: 0 auto;
